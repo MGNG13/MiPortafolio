@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <title>Magnus O. Norgaard B.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,23 @@
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/favicon.ico" type="image/x-icon">
     <link rel="icon" href="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/favicon.ico" type="image/x-icon">
     <style data-tag="reset-style-sheet">
+        *::-webkit-scrollbar {
+            width: 8px; /* Width of the scrollbar */
+            height: 8px; /* Height of the scrollbar */
+        }
+        *::-webkit-scrollbar-track {
+            background: #f1f1f1; /* Track color */
+        }
+        *::-webkit-scrollbar-thumb {
+            background-color: black; /* Thumb color */
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: #555; /* Hover color */
+        }
+        img {
+            border-radius: 10px;
+        }
         html {
             line-height: 1.15;
         }
@@ -14,9 +31,16 @@
             margin: 0;
         }
         * {
+            transition: 550ms ease-in-out;
             box-sizing: border-box;
             border-width: 0;
             border-style: solid;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         p,
         li,
@@ -1545,28 +1569,6 @@
                                 <br />
                             </span>
                             <h2 class="home-features-heading heading2"><a href="https://fiverr.com/bartgraphics">Mi Portafolio Publico</a></h2>
-                            <span class="home-features-sub-heading bodyLarge">
-                                <span>
-                                    <span>
-                                        <span>Discover what sets me apart in the industry</span>
-                                        <span></span>
-                                    </span>
-                                    <span>
-                                        <span></span>
-                                        <span></span>
-                                    </span>
-                                </span>
-                                <span>
-                                    <span>
-                                        <span></span>
-                                        <span></span>
-                                    </span>
-                                    <span>
-                                        <span></span>
-                                        <span></span>
-                                    </span>
-                                </span>
-                            </span>
                         </div>
                         <div class="home-container06">
                             <div class="feature-card-feature-card featuresCard">
@@ -1700,6 +1702,16 @@
                             </span>
                         </div>
                     </header>
+                </div>
+                <div class="collage-container" style="display: flex; width: 100vw; overflow-x: auto;">
+                    <img src="public/2.jpg">
+                    <img src="public/3.jpg">
+                    <img src="public/4.jpg">
+                    <img src="public/5.jpg">
+                    <img src="public/6.jpg">
+                    <img src="public/7.jpg">
+                    <img src="public/8.jpg">
+                    <img src="public/9.jpg">
                 </div>
             </div>
             <div class="home-footer">

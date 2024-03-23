@@ -529,6 +529,7 @@
         <style>
             .feature-card-feature-card {
                 background-color: #ffffff;
+                margin: 15px 0 15px 0;
             }
             .feature-card-container {
                 gap: var(--dl-space-space-unit);
@@ -553,6 +554,11 @@
                 width: 200px;
                 align-self: center;
                 object-fit: cover;
+            }
+            @media (min-width:961px)  {
+                .feature-card-image {
+                    width: 450px;
+                }
             }
             .feature-card-text1 {
                 padding: 15px;
@@ -1030,9 +1036,6 @@
             }
             .home-container06 {
                 width: 100%;
-                display: grid;
-                grid-gap: var(--dl-space-space-oneandhalfunits);
-                grid-template-columns: 1fr 1fr;
             }
             .home-testimonial {
                 width: 100%;

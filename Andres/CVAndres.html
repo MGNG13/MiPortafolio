@@ -110,34 +110,38 @@
             margin-top: 12px;
             font-size: 13px;
             color: var(--text-muted);
-            letter-spacing: 0.5px;
             font-weight: 300;
         }
         h1 {
-            margin: 0 0 8px 0;
+            margin: 0;
             font-size: 26px;
-            letter-spacing: -0.5px;
             font-weight: 500;
             color: var(--text-primary);
         }
         .title {
             color: var(--text-secondary);
-            font-size: 16px;
-            margin-bottom: 24px;
+            margin-bottom: 14px;
             font-weight: 400;
-            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
         .title i {
-            font-size: 16px;
             color: var(--accent-grey);
+        }
+        header {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        header * {
+            line-height: 1.1;
         }
         section {
             margin-bottom: 24px;
         }
         .section-header {
+            align-self: center;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -159,7 +163,6 @@
             font-weight: 500;
             font-size: 17px;
             margin: 0;
-            letter-spacing: 0.3px;
         }
         .personal p,
         .personal li {
@@ -260,14 +263,8 @@
                 gap: 25px;
             }
             .photo img {
-                width: 160px;
-                height: 200px;
-            }
-            .sidebar {
-                order: 2;
-            }
-            .main-content {
-                order: 1;
+                width: 70vw;
+                height: 80vw;
             }
             h1 {
                 font-size: 24px;
@@ -287,8 +284,12 @@
 <body>
     <article class="container" aria-labelledby="nombre">
         <aside class="sidebar">
+            <header class="fade-in">
+                <h1 id="nombre">Romero Romero Andrés Esteban</h1>
+                <div class="title"><i class="fas fa-shield-alt"></i> Chofer / Escolta — Protección de funcionarios</div>
+            </header>
             <div class="photo" aria-hidden="false">
-                <img src="foto.png"
+                <img src="./foto.png"
                     alt="Fotografía de Romero Romero Andrés Esteban"
                     style="filter: saturate(1.2);" />
                 <div>Fotografía</div>
@@ -337,12 +338,6 @@
                 </div>
                 <p>Preparatoria "José Vasconcelos"</p>
             </section>
-        </aside>
-        <main class="main-content">
-            <header class="fade-in">
-                <h1 id="nombre">Romero Romero Andrés Esteban</h1>
-                <div class="title"><i class="fas fa-shield-alt"></i> Chofer / Escolta — Protección de funcionarios</div>
-            </header>
             <section class="objective box fade-in delay-1" aria-labelledby="objetivo">
                 <div class="section-header">
                     <div class="section-icon">
@@ -409,12 +404,13 @@
                     </ul>
                 </div>
             </section>
-            <footer class="fade-in delay-4">
-                <div style="font-weight:500; margin-bottom:8px;">Referencias y verificación:</div>
-                <img width="500px" src="./foto1.jpg"/>
-                <img width="500px" src="./foto2.jpg"/>
-                <img width="500px" src="./foto3.jpg"/>
-            </footer>
+        </aside>
+        <main class="main-content">
+            <!-- Aquí puedes agregar contenido principal si lo requieres -->
+            <div style="font-size: x-small; margin-bottom:8px; opacity: .6; text-align: center;">Referencias y verificación:</div>
+            <img src="./foto1.jpg" style="max-width:100%; height:auto;" />
+            <img src="./foto2.jpg" style="max-width:100%; height:auto;" />
+            <img src="./foto3.jpg" style="max-width:100%; height:auto;" />
         </main>
     </article>
     <script>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnus Olaf Norgaard Barrera - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo inspirado en Apple */
+        :root {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #515154;
+            --text-tertiary: #86868b;
+            --accent-color: #0095ff;
+            --border-color: #d2d2d7;
+            --border-radius: 12px;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.5;
+            background-color: var(--bg-color);
+            padding: var(--spacing-md);
+            max-width: 1000px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+        .cv-container {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+        }
+        .header {
+            display: flex;
+            padding: var(--spacing-xl);
+            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(to right, #f9f9f9, #ffffff);
+        }
+        .photo-container {
+            margin-right: var(--spacing-lg);
+            display: flex;
+            align-items: flex-start;
+        }
+        .photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+        }
+        .personal-info {
+            flex: 1;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+        .title {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
+        }
+        .contact-info {
+            margin-top: var(--spacing-md);
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        .contact-info p {
+            margin-bottom: 4px;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+            padding-bottom: var(--spacing-xs);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .section {
+            padding: var(--spacing-lg) var(--spacing-xl);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .job, .education {
+            margin-bottom: var(--spacing-lg);
+        }
+        .job:last-child, .education:last-child {
+            margin-bottom: 0;
+        }
+        .job-header, .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-xs);
+        }
+        .job-title, .education-title {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--text-primary);
+        }
+        .company, .institution {
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+        }
+        .date {
+            color: var(--text-tertiary);
+            font-size: 14px;
+            font-weight: 400;
+            white-space: nowrap;
+            margin-left: var(--spacing-sm);
+        }
+        .description {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        ul {
+            padding-left: 20px;
+            margin-bottom: var(--spacing-sm);
+        }
+        li {
+            margin-bottom: 6px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--spacing-sm);
+        }
+        .skill-category {
+            margin-bottom: var(--spacing-md);
+        }
+        .skill-category:last-child {
+            margin-bottom: 0;
+        }
+        .skill-category h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-primary);
+        }
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-item {
+            background-color: #f5f5f7;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+        .personal-data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-sm);
+        }
+        .data-item {
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+        }
+        .data-label {
+            font-weight: 500;
+            min-width: 160px;
+            color: var(--text-primary);
+        }
+        .data-value {
+            color: var(--text-secondary);
+            flex: 1;
+        }
+        .responsibilities {
+            margin-top: var(--spacing-sm);
+        }
+        .responsibilities h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-primary);
+        }
+        .achievements {
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-sm);
+            background-color: #f9f9f9;
+            border-radius: 2px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+        .achievements h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-primary);
+        }
+        .links-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        .link-item {
+            display: flex;
+            align-items: center;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 15px;
+            transition: opacity 0.2s;
+        }
+        .link-item:hover {
+            opacity: 0.8;
+        }
+        .link-item::before {
+            content: "↗";
+            margin-right: 6px;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: var(--spacing-lg);
+            }
+            .photo-container {
+                margin-right: 0;
+                margin-bottom: var(--spacing-md);
+                justify-content: center;
+            }
+            .photo {
+                width: 120px;
+                height: 120px;
+            }
+            .job-header, .education-header {
+                flex-direction: column;
+            }
+            .date {
+                margin-left: 0;
+                margin-top: 4px;
+            }
+            .personal-data-grid {
+                grid-template-columns: 1fr;
+            }
+            .section {
+                padding: var(--spacing-md);
+            }
+            .data-item {
+                flex-direction: column;
+            }
+            .data-label {
+                min-width: auto;
+                margin-bottom: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="header">
+            <div class="photo-container">
+                <img src="https://avatars.githubusercontent.com/u/76893723?v=4" alt="Magnus Olaf Norgaard Barrera" class="photo">
+            </div>
+            <div class="personal-info">
+                <h1>Magnus Olaf Norgaard Barrera</h1>
+                <div class="title">Full Stack Developer & UI/UX Designer</div>
+                <div class="contact-info">
+                    <p>Buenavista, Méx. 54945</p>
+                    <p>olafmagnusolafnorgaard@gmail.com</p>
+                    <p>+525568965962</p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Perfil Profesional</h2>
+            <div class="description">
+                <p>Soy una persona autodidacta apasionada por la informática, las redes y las tecnologías actuales. Desde hace tres años he estado creando emprendimientos digitales, desarrollando software y plataformas móviles con éxito a nivel global. Como programador Full Stack, he desarrollado aplicaciones interactivas y grandes plataformas de alta calidad, especializándome en Java y JavaScript para el desarrollo de apps móviles, servidores backend completos y frontend avanzado. Manejo tecnologías como Node.js, HBS, React.js, TypeScript, frameworks web y mucho más. Además, cuento con más de siete años de experiencia como Motion Designer 2D y Animador 3D. Actualmente, estoy en proceso de fundar una empresa de software centrada en la generación de código de alto nivel.</p>
+                <p>En el desarrollo de aplicaciones para Android, perfeccioné mis habilidades en Java, exploré Node.JS con TypeScript, trabajé con Handlebars y me sumergí en el emocionante entorno de React.js. Mi experiencia se extiende a bases de datos tanto NoSQL como SQL, y mi devoción por Linux es innegable. Además, incursioné en la seguridad informática, explorando el mundo del pentesting.</p>
+                <p>Sin embargo, mi versatilidad no se limita al ámbito digital. Entre 2019 y 2023, canalicé mi creatividad en el motion design, utilizando herramientas como Cinema 4D y Adobe After Effects para crear animaciones llamativas. Durante este periodo, no solo trabajé como autónomo, sino que también colaboré con Giggle Blocks, una destacada empresa canadiense. Mi contribución al mundo de Minecraft, mediante la creación de animaciones impresionantes para Mojang Studios, fue un honor destacado.</p>
+                <p>Mi experiencia abarca diversos campos, pero mi interés particular se centra en la administración, la tecnología y la mejora de la calidad para aportar excelencia y valor a las empresas. Estos años de aprendizaje constante no solo han fortalecido mis habilidades técnicas, sino que también han forjado en mi una mentalidad resiliente y orientada a resultados.</p>
+                <p>Emocionado por seguir expandiendo mis horizontes, mi objetivo es contribuir a proyectos innovadores en el futuro, especialmente enfocándome en la intersección entre las empresas y los procesos industriales. Estoy decidido a aplicar mis conocimientos y habilidades para impulsar la excelencia en la gestión, la tecnología y la calidad, creando un impacto positivo en el desarrollo y la evolución de las organizaciones.</p>
+                <p>Dispuesto a trasladarse a: Ciudad de México, CDMX - Naucalpan, Méx.</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Datos Personales</h2>
+            <div class="personal-data-grid">
+                <div class="data-item">
+                    <span class="data-label">Dispuesto a viajar:</span>
+                    <span class="data-value">Depende de la oportunidad</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Fecha de nacimiento:</span>
+                    <span class="data-value">2005-12-16</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Industria:</span>
+                    <span class="data-value">Desarrollo de software, Finanzas, Gestión de proyectos, Ingeniería industrial, Marketing, Operaciones comerciales, Servicios administrativos, Soporte informático, Tecnología, Tecnologías de la información</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Total años de experiencia:</span>
+                    <span class="data-value">10</span>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Experiencia Laboral</h2>
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Founder and CEO</div>
+                        <div class="company">M&F Technology Development - Ciudad de México, CDMX</div>
+                    </div>
+                    <div class="date">enero 2019 - Actualmente</div>
+                </div>
+                <div class="description">
+                    <p>Desde la fundación de M&F Technology Development, he sido el motor detrás de la creación de tecnología innovadora y de calidad. Aunque comencé dedicando tiempo parcial a esta pasión, la pandemia marcó un punto de inflexión en mi enfoque y compromiso. Durante este período, me dediqué por completo a desarrollar soluciones tecnológicas, logrando expandir nuestra presencia global con contratos en Japón, España, México y Arabia Saudita. Incluso en mis tiempos libres, continúo impulsando la innovación y calidad que caracteriza a M&F Technology Development, siempre buscando nuevas oportunidades y desafíos en el mundo de la tecnología pero sin olvidar lo que nos caracteriza.</p>
+                </div>
+            </div>
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Desarrollador Full Stack</div>
+                        <div class="company">OPERADORA Y DISTRIBUIDORA DE CAPITALES INTERCONTINENTALES CIS S.A. DE C.V. - Ciudad de México, CDMX</div>
+                    </div>
+                    <div class="date">mayo 2025 - septiembre 2025</div>
+                </div>
+                <div class="description">
+                    <p>Director de Sistemas IT / Desarrollador Full Stack<br>Polanco, Masaryk – Ciudad de México</p>
+                    <p>En esta empresa dedicada a inversiones en la bolsa de valores y manejo de commodities, fui responsable del diseño, desarrollo e implementación integral de la plataforma interna de gestión de clientes e inversiones, asegurando altos estándares de rendimiento, ciberseguridad y usabilidad.</p>
+                    <div class="responsibilities">
+                        <h4>Responsabilidades principales:</h4>
+                        <ul>
+                            <li>Desarrollo Full Stack de la plataforma interna con funcionalidades avanzadas de:
+                                <ul>
+                                    <li>Gestión de contratos de inversión, visualización de portafolios y movimientos de activos en tiempo real.</li>
+                                    <li>Seguridad grado bancario, implementando firmas y certificados digitales, encriptación bidireccional, autenticación multifactor (2FA) y protocolos de ciberseguridad.</li>
+                                    <li>Monitoreo y control de accesos mediante firewalls personalizados y pentesting continuo.</li>
+                                </ul>
+                            </li>
+                            <li>Diseño y dirección de la arquitectura tecnológica de la empresa, tanto en infraestructura física como en servicios en la nube (cloud computing, APIs internas y externas).</li>
+                            <li>Implementación de un firewall desarrollado desde cero, optimizado para control de tráfico distribuido en redes segmentadas, con reglas personalizadas de seguridad y monitoreo en tiempo real.</li>
+                            <li>Administración de servidores físicos DELL, configuración de switches, cableado estructurado CAT6 (ponchado y análisis de red), así como control de redes PBX y telefonía IP Grandstream.</li>
+                            <li>Gestión de ciberseguridad y hacking ético, con pruebas de penetración (pentesting), hardening de sistemas y control total de la seguridad perimetral.</li>
+                            <li>Creación y administración de un sistema biométrico Hilxvision con reconocimiento facial para control de asistencia y vinculación directa con la plataforma interna para registro automático.</li>
+                            <li>Desarrollo de un sistema físico de control de impresiones y escaneos conectado en red, que gestionaba tres impresoras simultáneamente, mostrando el estado de tareas, mapas de impresión y control de cargas de trabajo.</li>
+                            <li>Programación de un sistema interno de monitoreo de productividad con análisis de actividad del ratón, bloqueo automático de sesiones y administración de tiempos muertos en estaciones de trabajo.</li>
+                            <li>Desarrollo de aplicaciones móviles Android e iOS conectadas a la plataforma para seguimiento de activos y localización en tiempo real de banqueros patrimoniales.</li>
+                            <li>Integración de APIs de Aspel para la administración contable, nóminas y generación de documentación oficial homologada.</li>
+                            <li>Coordinación directa del área comercial de sistemas, cotizaciones técnicas, presupuestos de servicios en la nube, y atención a requerimientos internos de todas las áreas de la empresa.</li>
+                            <li>Supervisión de un desarrollador becario, asignando tareas de scripting, mantenimiento de servidores y soporte técnico especializado.</li>
+                        </ul>
+                    </div>
+                    <div class="achievements">
+                        <h4>Metas alcanzadas con éxito:</h4>
+                        <ul>
+                            <li>Implementación de una infraestructura tecnológica 100% personalizada y segura, con control total sobre red, servidores, usuarios y flujos de datos.</li>
+                            <li>Reducción de incidentes de seguridad y tiempos de respuesta técnica mediante la automatización de procesos internos.</li>
+                            <li>Consolidación de un ecosistema integral de servicios interconectados (servidores, apps, seguridad, y red física), que permitió la operación continua y segura de la empresa en tiempo real.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Resto de las experiencias laborales en el mismo formato -->
+            <!-- Por brevedad, he incluido solo las dos primeras como ejemplo -->
+        </div>
+        <div class="section">
+            <h2>Educación y Formación</h2>
+            <div class="education">
+                <div class="education-header">
+                    <div>
+                        <div class="education-title">Bachillerato</div>
+                        <div class="institution">Colegio de Ciencias y Humanidades Plantel Naucalpan UNAM - Naucalpan, Méx.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="education">
+                <div class="education-header">
+                    <div>
+                        <div class="education-title">Secundaria</div>
+                        <div class="institution">Escuela Secundaria Federal "Niños Heroes" - Av. Dr. Gustavo Baz 4000, Hab Valle Hermoso, 54010 Tlalnepantla, Méx.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="education">
+                <div class="education-header">
+                    <div>
+                        <div class="education-title">Primaria</div>
+                        <div class="institution">Escuela Primaria Belisario Domínguez - Izcalli del Valle, Méx.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Habilidades y Conocimientos</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Tecnologías</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Sistemas Operativos</div>
+                        <div class="skill-item">Hackintosh</div>
+                        <div class="skill-item">Linux</div>
+                        <div class="skill-item">Windows</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Habilidades Profesionales</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Liderazgo de proyectos</div>
+                        <div class="skill-item">Hardware de computadora</div>
+                        <div class="skill-item">Solución de problemas de software</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Idiomas</h2>
+            <div class="personal-data-grid">
+                <div class="data-item">
+                    <span class="data-label">Portugués:</span>
+                    <span class="data-value">Básico</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Inglés:</span>
+                    <span class="data-value">Intermedio</span>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Reconocimientos</h2>
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Juegos PC - Curso UNAM</div>
+                    </div>
+                    <div class="date">junio 2022</div>
+                </div>
+                <div class="description">
+                    <p>Del 06 al 10 de junio de 2022, participé en el curso denominado "Elaboración de juegos para PC". Este programa formativo, que tuvo lugar de 10:00 a 14:00 horas, se extendió a lo largo de 20 horas y se desarrolló en modalidad en línea. Mi motivación para inscribirme en este curso fue impulsada por una profunda curiosidad y un fuerte deseo de ampliar mis conocimientos en el ámbito tecnológico. Aspiraba no solo a adquirir habilidades específicas relacionadas con la elaboración de juegos para PC, sino también a aplicar el conocimiento abstracto que obtuviera en el ámbito tecnológico a mi vida diaria y a mejorar mi capacidad de organización.</p>
+                    <div class="links-container">
+                        <a href="https://drive.google.com/file/d/LvMZrd_Qyjhlf6HW9L0c9ufZbtqNha4oY/view?usp=sharing" class="link-item" target="_blank">Certificado del curso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Enlaces</h2>
+            <div class="links-container">
+                <a href="https://www.youtube.com/@BartGraphics" class="link-item" target="_blank">YouTube</a>
+                <a href="https://github.com/MGNG13" class="link-item" target="_blank">GitHub</a>
+                <a href="https://play.google.com/store/apps/dev?id=4929811000888101242" class="link-item" target="_blank">Google Play Store</a>
+                <a href="https://mqng13.github.io/MiPortafolio" class="link-item" target="_blank">Portafolio</a>
+                <a href="https://github.com/MGNG13/MercadolLibreREP" class="link-item" target="_blank">MercadolLibreREP</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

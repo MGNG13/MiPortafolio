@@ -396,17 +396,21 @@
         }
         .repo-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 1fr;
             gap: var(--space-md);
+            align-items: stretch;
         }
         .repo-card {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             padding: var(--space-md);
             border: 1px solid var(--color-border);
             border-radius: var(--radius);
             transition: border-color 0.2s ease, transform 0.2s ease;
             height: 100%;
+            min-height: 0;
         }
         .repo-card:hover {
             border-color: var(--color-signal);
@@ -682,39 +686,6 @@
             object-fit: cover;
             flex-shrink: 0;
         }
-        /* ===== Productos ===== */
-        .productos {
-            padding: var(--space-2xl) 0;
-            background: var(--color-surface);
-        }
-        .productos-card {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-            padding: var(--space-xl);
-            background: var(--color-bg);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius);
-        }
-        .productos-card .overline {
-            display: block;
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--color-signal);
-            margin-bottom: var(--space-sm);
-        }
-        .productos-card h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: var(--space-sm);
-        }
-        .productos-card p {
-            font-size: 1rem;
-            color: var(--color-text-secondary);
-            margin-bottom: var(--space-lg);
-            line-height: 1.6;
-        }
         /* ===== Footer ===== */
         .footer {
             padding: var(--space-xl) 0 var(--space-lg);
@@ -790,6 +761,7 @@
             .steps-grid,
             .repo-grid {
                 grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 1fr;
             }
             .servicios-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -859,7 +831,6 @@
                     <li><a href="#proyectos">Proyectos</a></li>
                     <li><a href="#experiencia">Experiencia</a></li>
                     <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#productos">Productos</a></li>
                 </ul>
             </nav>
             <a href="mailto:olafmagnusolafnorgaard@gmail.com?subject=Quiero digitalizar mi negocio!&body=Hola Magnus Nørgaard! Estos son mis datos de contacto para que agendemos una cita sin costo. Teléfono:[55 0000 0000] El nombre de mi negocio:[NOMBRE DE TU NEGOCIO] A que se dedica mi negocio:[A QUE SE DEDICA]" class="nav-cta">Contacto</a>
@@ -1000,15 +971,39 @@
             <div class="section-header">
                 <span class="overline">Código abierto</span>
                 <h2>Proyectos Realizados</h2>
-                <p>Una muestra de mis repositorios públicos, directo desde mi perfil de <a href="https://github.com/MGNG13" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">GitHub</a>.</p>
+                <p>Una muestra de mis repositorios públicos activos, directo desde mi perfil de <a href="https://github.com/MGNG13" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">GitHub</a>.</p>
             </div>
             <div class="repo-grid">
+                <a class="repo-card" href="https://github.com/MGNG13/SoundGloudDownloader" target="_blank" rel="noopener noreferrer">
+                    <div class="repo-top">
+                        <span class="repo-name">SoundGloudDownloader</span>
+                        <span class="repo-lang">Java</span>
+                    </div>
+                    <p class="repo-desc">Aplicación para descargar música de SoundCloud de forma sencilla.</p>
+                    <span class="repo-link">Ver repositorio &rarr;</span>
+                </a>
                 <a class="repo-card" href="https://github.com/MGNG13/MiPortafolio" target="_blank" rel="noopener noreferrer">
                     <div class="repo-top">
                         <span class="repo-name">MiPortafolio</span>
                         <span class="repo-lang">HTML</span>
                     </div>
                     <p class="repo-desc">Mi portafolio personal con todos los proyectos que he desarrollado como freelancer.</p>
+                    <span class="repo-link">Ver repositorio &rarr;</span>
+                </a>
+                <a class="repo-card" href="https://github.com/MGNG13/CacheProxyComputer" target="_blank" rel="noopener noreferrer">
+                    <div class="repo-top">
+                        <span class="repo-name">CacheProxyComputer</span>
+                        <span class="repo-lang">Go</span>
+                    </div>
+                    <p class="repo-desc">Proxy ligero de internet para mejorar la navegación y el rendimiento.</p>
+                    <span class="repo-link">Ver repositorio &rarr;</span>
+                </a>
+                <a class="repo-card" href="https://github.com/MGNG13/MercadoLibreREP" target="_blank" rel="noopener noreferrer">
+                    <div class="repo-top">
+                        <span class="repo-name">MercadoLibreREP</span>
+                        <span class="repo-lang">Archivo</span>
+                    </div>
+                    <p class="repo-desc">Archivo de los prototipos internos desarrollados durante mi etapa como Representante de Envíos en MercadoLibre.</p>
                     <span class="repo-link">Ver repositorio &rarr;</span>
                 </a>
                 <a class="repo-card" href="https://github.com/MGNG13/ManExplainer" target="_blank" rel="noopener noreferrer">
@@ -1019,36 +1014,20 @@
                     <p class="repo-desc">Asistente técnico que combina los manuales de Linux (man) con IA de Gemini para dar explicaciones claras y precisas.</p>
                     <span class="repo-link">Ver repositorio &rarr;</span>
                 </a>
-                <a class="repo-card" href="https://github.com/MGNG13/CacheProxyComputer" target="_blank" rel="noopener noreferrer">
+                <a class="repo-card" href="https://github.com/MGNG13/Hackingtosh" target="_blank" rel="noopener noreferrer">
                     <div class="repo-top">
-                        <span class="repo-name">CacheProxyComputer</span>
-                        <span class="repo-lang">Go</span>
+                        <span class="repo-name">Hackingtosh</span>
+                        <span class="repo-lang">Guía</span>
                     </div>
-                    <p class="repo-desc">Proxy de internet ligero, multiplataforma, construido en Go para Windows, Linux y más.</p>
+                    <p class="repo-desc">Guía completa para crear un Hackingtosh desde Windows con instrucciones detalladas.</p>
                     <span class="repo-link">Ver repositorio &rarr;</span>
                 </a>
-                <a class="repo-card" href="https://github.com/MGNG13/RAE-Diccionario-Local" target="_blank" rel="noopener noreferrer">
+                <a class="repo-card" href="https://github.com/MGNG13/RaeDiccionarioLocal" target="_blank" rel="noopener noreferrer">
                     <div class="repo-top">
-                        <span class="repo-name">RAE-Diccionario-Local</span>
+                        <span class="repo-name">RaeDiccionarioLocal</span>
                         <span class="repo-lang">JavaScript</span>
                     </div>
-                    <p class="repo-desc">Extensión de navegador para buscar significados de palabras en español, con más de 76,000 palabras indexadas.</p>
-                    <span class="repo-link">Ver repositorio &rarr;</span>
-                </a>
-                <a class="repo-card" href="https://github.com/MGNG13/TableEditorCSV" target="_blank" rel="noopener noreferrer">
-                    <div class="repo-top">
-                        <span class="repo-name">TableEditorCSV</span>
-                        <span class="repo-lang">HTML</span>
-                    </div>
-                    <p class="repo-desc">Editor de tablas con guardado local (localStorage) que exporta y sincroniza datos a CSV/Excel.</p>
-                    <span class="repo-link">Ver repositorio &rarr;</span>
-                </a>
-                <a class="repo-card" href="https://github.com/MGNG13/Hanbu" target="_blank" rel="noopener noreferrer">
-                    <div class="repo-top">
-                        <span class="repo-name">Hanbu</span>
-                        <span class="repo-lang">JavaScript</span>
-                    </div>
-                    <p class="repo-desc">App para aprender coreano con juegos de palabras, desarrollada por encargo de mi hermana.</p>
+                    <p class="repo-desc">Extensión de navegador para buscar significados de palabras en español utilizando la RAE.</p>
                     <span class="repo-link">Ver repositorio &rarr;</span>
                 </a>
                 <a class="repo-card" href="https://github.com/MGNG13/PyDorking" target="_blank" rel="noopener noreferrer">
@@ -1056,15 +1035,15 @@
                         <span class="repo-name">PyDorking</span>
                         <span class="repo-lang">Perl</span>
                     </div>
-                    <p class="repo-desc">Herramienta de Google Dorking para búsquedas avanzadas orientadas a seguridad informática.</p>
+                    <p class="repo-desc">Herramienta de búsqueda avanzada utilizando Google Dorks para encontrar información específica.</p>
                     <span class="repo-link">Ver repositorio &rarr;</span>
                 </a>
-                <a class="repo-card" href="https://github.com/MGNG13/MercadoLibreREP" target="_blank" rel="noopener noreferrer">
+                <a class="repo-card" href="https://github.com/MGNG13/Hanbu" target="_blank" rel="noopener noreferrer">
                     <div class="repo-top">
-                        <span class="repo-name">MercadoLibreREP</span>
-                        <span class="repo-lang">Archivo</span>
+                        <span class="repo-name">Hanbu</span>
+                        <span class="repo-lang">JavaScript</span>
                     </div>
-                    <p class="repo-desc">Archivo de los prototipos internos que desarrollé durante mi etapa como Representante de Envíos en MercadoLibre.</p>
+                    <p class="repo-desc">Juegos de palabras interactivos para aprender y practicar vocabulario de forma divertida.</p>
                     <span class="repo-link">Ver repositorio &rarr;</span>
                 </a>
             </div>
@@ -1079,14 +1058,14 @@
             <div class="section-header">
                 <span class="overline">Mi trayectoria</span>
                 <h2>Experiencia</h2>
-                <p>Más de 10 años combinando desarrollo de software, ciberseguridad, motion design y administración de sistemas.</p>
+                <p>10+ años en desarrollo, ciberseguridad, motion design y sistemas.</p>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
                     <span class="timeline-dot"></span>
                     <span class="timeline-date">Enero 2019 — Actualidad</span>
-                    <h3 class="timeline-role">Founder & CEO</h3>
-                    <span class="timeline-company">M&F Technology Development · Ciudad de México</span>
+                    <h3 class="timeline-role">Founder and CEO</h3>
+                    <span class="timeline-company">Manof Technologies · Ciudad de México</span>
                     <p class="timeline-desc">Dirijo el desarrollo de soluciones tecnológicas a la medida, con clientes y contratos en México, Japón, España y Arabia Saudita.</p>
                 </div>
                 <div class="timeline-item">
@@ -1099,14 +1078,14 @@
                 <div class="timeline-item">
                     <span class="timeline-dot"></span>
                     <span class="timeline-date">2021 — 2025</span>
-                    <h3 class="timeline-role">Técnico en Computación (independiente)</h3>
+                    <h3 class="timeline-role">Técnico en computación</h3>
                     <span class="timeline-company">Tultitlán, Méx.</span>
                     <p class="timeline-desc">Ensamblaje y mantenimiento de equipo, administración de servidores Linux (Ubuntu, Kali, Arch) y desarrollo de una Hackintosh completamente funcional desde cero.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-dot"></span>
                     <span class="timeline-date">Septiembre 2024 — Diciembre 2024</span>
-                    <h3 class="timeline-role">Ayudante General (REP)</h3>
+                    <h3 class="timeline-role">Representante de envíos (REP)</h3>
                     <span class="timeline-company">Mercado Libre · Tultepec, Méx.</span>
                     <p class="timeline-desc">Analicé el flujo logístico de última milla y programé prototipos internos para optimizar tareas repetitivas y el control de desempeño operativo.</p>
                 </div>
@@ -1116,13 +1095,6 @@
                     <h3 class="timeline-role">Freelancer Full-Stack Developer & Motion Designer</h3>
                     <span class="timeline-company">Fiverr · Tultitlán, Méx.</span>
                     <p class="timeline-desc">Más de cuatro años desarrollando videojuegos, apps móviles, logos y animaciones para clientes alrededor del mundo.</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-dot"></span>
-                    <span class="timeline-date">Junio 2023 — Julio 2023</span>
-                    <h3 class="timeline-role">Ayudante General</h3>
-                    <span class="timeline-company">Envases y Empaques Titanium, S.A. de C.V. · Naucalpan, Méx.</span>
-                    <p class="timeline-desc">Inspección de calidad, conteo y empaquetado: mi primer acercamiento real a los procesos industriales y de manufactura.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-dot"></span>
@@ -1143,17 +1115,31 @@
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-card">
-                    <img alt="Becas de México" src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/BecasMexicoGraficoDeFunciones.jpg" loading="lazy">
+                    <img alt="SoundGloudDownloader" src="https://raw.githubusercontent.com/MGNG13/SoundGloudDownloader/main/docs/EN/Captura1en.jpg" loading="lazy">
                     <div class="portfolio-card-content">
-                        <h3>Becas de México</h3>
-                        <p>App nativa para Android que usaba webscrapping para mostrar el mismo contenido de WordPress de forma nativa y optimizada.</p>
+                        <h3>SoundGloudDownloader</h3>
+                        <p>App para descargar música de SoundCloud en alta calidad simplemente pegando el enlace. Rápida, sencilla y perfecta para escuchar tus canciones favoritas sin conexión.</p>
                     </div>
                 </div>
                 <div class="portfolio-card">
                     <img alt="RedLanderMX" src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/refs/heads/main/public/1.png" loading="lazy">
                     <div class="portfolio-card-content">
                         <h3>RedLanderMX</h3>
-                        <p>Sitio web corporativo para una empresa especializada en asesoría y gestión de pensiones.</p>
+                        <p>Sitio web corporativo de gestión de pensiones.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img alt="Andromadus" src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/andromadus.png" loading="lazy">
+                    <div class="portfolio-card-content">
+                        <h3>Andromadus</h3>
+                        <p>App de IA para gestión de tareas.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img alt="Becas de México" src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/BecasMexicoGraficoDeFunciones.jpg" loading="lazy">
+                    <div class="portfolio-card-content">
+                        <h3>Becas de México</h3>
+                        <p>App Android con webscrapping de contenido WordPress.</p>
                     </div>
                 </div>
                 <div class="portfolio-card">
@@ -1164,21 +1150,14 @@
                     </div>
                 </div>
                 <div class="portfolio-card">
-                    <img alt="Andromadus" src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/andromadus.png" loading="lazy">
-                    <div class="portfolio-card-content">
-                        <h3>Andromadus</h3>
-                        <p>App con inteligencia artificial para el manejo de tareas del día a día.</p>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <img alt="Mobil Sorgulari" src="public/work-200h.png" loading="lazy">
+                    <img alt="Mobil Sorgulari" src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/work-200h.png" loading="lazy">
                     <div class="portfolio-card-content">
                         <h3>Mobil Sorgulari</h3>
                         <p>Plataforma dedicada a mapas y medición de distancias entre usuarios. App terminada con éxito, incluyendo logo, alcanzando más de 20,000 usuarios activos.</p>
                     </div>
                 </div>
                 <div class="portfolio-card">
-                    <img alt="Obra Social" src="public/reference-200h.webp" loading="lazy">
+                    <img alt="Obra Social" src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/reference-200h.webp" loading="lazy">
                     <div class="portfolio-card-content">
                         <h3>Obra Social</h3>
                         <p>Automatización de notificaciones para toda una comunidad suscrita en la app móvil, permitiendo envíos masivos eficientes.</p>
@@ -1189,13 +1168,6 @@
                     <div class="portfolio-card-content">
                         <h3>Hanbu</h3>
                         <p>App para aprender coreano con juegos de palabras, desarrollada por encargo de mi hermana para guardar el aprendizaje y reforzar conocimientos.</p>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <img alt="ToDoReact" src="https://github.com/MGNG13/ToDoReact/raw/main/docs/localhost.png" loading="lazy">
-                    <div class="portfolio-card-content">
-                        <h3>ToDoReact</h3>
-                        <p>App simple para el manejo de tareas. Mi primer app en React, diseñada para aprender esta tecnología base de otros frameworks modernos.</p>
                     </div>
                 </div>
             </div>
@@ -1252,7 +1224,7 @@
         </div>
     </section>
     <!-- Testimonios -->
-    <section class="testimonios" style="max-width: 90%;">
+    <section class="testimonios">
         <div class="container">
             <div class="testimonios-header">
                 <h2>Lo que opinan de mi trabajo</h2>
@@ -1282,25 +1254,14 @@
                 </div>
             </div>
             <div class="collage" style="overflow: hidden; max-width: fit-content;">
-                <img src="public/2.jpg" alt="Trabajo 2" loading="lazy">
-                <img src="public/3.jpg" alt="Trabajo 3" loading="lazy">
-                <img src="public/4.jpg" alt="Trabajo 4" loading="lazy">
-                <img src="public/5.jpg" alt="Trabajo 5" loading="lazy">
-                <img src="public/6.jpg" alt="Trabajo 6" loading="lazy">
-                <img src="public/7.jpg" alt="Trabajo 7" loading="lazy">
-                <img src="public/8.jpg" alt="Trabajo 8" loading="lazy">
-                <img src="public/9.jpg" alt="Trabajo 9" loading="lazy">
-            </div>
-        </div>
-    </section>
-    <!-- Productos -->
-    <section id="productos" class="productos">
-        <div class="container">
-            <div class="productos-card">
-                <span class="overline">Tienda</span>
-                <h2>Productos</h2>
-                <p>Equipos, accesorios tecnológicos y artículos disponibles para venta directa en mi Marketplace de Facebook.</p>
-                <a href="https://www.facebook.com/marketplace/profile/100014201322432/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Productos en Facebook &rarr;</a>
+                <img src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/2.jpg" alt="Trabajo 2" loading="lazy">
+                <img src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/3.jpg" alt="Trabajo 3" loading="lazy">
+                <img src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/4.jpg" alt="Trabajo 4" loading="lazy">
+                <img src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/5.jpg" alt="Trabajo 5" loading="lazy">
+                <img src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/6.jpg" alt="Trabajo 6" loading="lazy">
+                <img src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/7.jpg" alt="Trabajo 7" loading="lazy">
+                <img src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/8.jpg" alt="Trabajo 8" loading="lazy">
+                <img src="https://raw.githubusercontent.com/MGNG13/MiPortafolio/main/public/9.jpg" alt="Trabajo 9" loading="lazy">
             </div>
         </div>
     </section>
@@ -1314,7 +1275,6 @@
                     <li><a href="#proyectos">Proyectos</a></li>
                     <li><a href="#experiencia">Experiencia</a></li>
                     <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#productos">Productos</a></li>
                     <li><a href="mailto:olafmagnusolafnorgaard@gmail.com?subject=Quiero digitalizar mi negocio!&body=Hola Magnus Nørgaard! Estos son mis datos de contacto para que agendemos una cita sin costo. Teléfono:[55 0000 0000] El nombre de mi negocio:[NOMBRE DE TU NEGOCIO] A que se dedica mi negocio:[A QUE SE DEDICA]">Contacto</a></li>
                 </ul>
             </div>
